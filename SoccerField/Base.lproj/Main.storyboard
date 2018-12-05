@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uxh-WM-5ZX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Players layout-->
+        <scene sceneID="DCL-dB-qif">
+            <objects>
+                <viewController id="fmd-tw-F7E" customClass="FieldViewController" customModule="SoccerField" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fgt-Jk-dR5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdX-RT-QUL" customClass="SoccerFieldView" customModule="SoccerField" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.30676203530000001" green="0.69513815219999997" blue="0.25010563180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HdX-RT-QUL" firstAttribute="top" secondItem="fgt-Jk-dR5" secondAttribute="top" id="G6h-9k-FUt"/>
+                            <constraint firstItem="jO9-8j-5bx" firstAttribute="trailing" secondItem="HdX-RT-QUL" secondAttribute="trailing" id="IvZ-oD-SCN"/>
+                            <constraint firstItem="jO9-8j-5bx" firstAttribute="bottom" secondItem="HdX-RT-QUL" secondAttribute="bottom" id="euo-BP-GPX"/>
+                            <constraint firstItem="HdX-RT-QUL" firstAttribute="leading" secondItem="jO9-8j-5bx" secondAttribute="leading" id="t0R-or-c8k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jO9-8j-5bx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Players layout" id="XVU-wx-bKN"/>
+                    <connections>
+                        <outlet property="soccerFieldView" destination="HdX-RT-QUL" id="X6c-vd-LWo"/>
+                        <segue destination="uxh-WM-5ZX" kind="show" identifier="segueToScheme" id="xlY-So-ZEO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cX-al-P3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1487.2" y="78.710644677661179"/>
+        </scene>
+        <!--Select scheme-->
+        <scene sceneID="fyb-ct-xwB">
+            <objects>
+                <viewController id="uxh-WM-5ZX" customClass="SelectViewController" customModule="SoccerField" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ylv-RP-Oht">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jkc-D1-TMZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="216"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOl-Ki-a9h">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBZ-oi-T2c">
+                                <rect key="frame" x="143" y="318" width="88" height="30"/>
+                                <state key="normal" title="Show Layout"/>
+                                <connections>
+                                    <action selector="switchToField:" destination="uxh-WM-5ZX" eventType="touchUpInside" id="jZB-t2-QIG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aBZ-oi-T2c" firstAttribute="centerY" secondItem="Ylv-RP-Oht" secondAttribute="centerY" id="0Ml-nS-adY"/>
+                            <constraint firstItem="ppG-W4-VUB" firstAttribute="bottom" secondItem="ZOl-Ki-a9h" secondAttribute="bottom" id="Br2-jf-Yt0"/>
+                            <constraint firstItem="ZOl-Ki-a9h" firstAttribute="leading" secondItem="ppG-W4-VUB" secondAttribute="leading" id="C1Q-l0-9tF"/>
+                            <constraint firstItem="Jkc-D1-TMZ" firstAttribute="top" secondItem="ppG-W4-VUB" secondAttribute="top" id="GYe-Tz-iXO"/>
+                            <constraint firstItem="aBZ-oi-T2c" firstAttribute="centerX" secondItem="Ylv-RP-Oht" secondAttribute="centerX" id="Y97-dk-VQk"/>
+                            <constraint firstItem="Jkc-D1-TMZ" firstAttribute="trailing" secondItem="ppG-W4-VUB" secondAttribute="trailing" id="lgy-m1-QL1"/>
+                            <constraint firstItem="Jkc-D1-TMZ" firstAttribute="leading" secondItem="ppG-W4-VUB" secondAttribute="leading" id="phR-AO-oD6"/>
+                            <constraint firstItem="ZOl-Ki-a9h" firstAttribute="trailing" secondItem="ppG-W4-VUB" secondAttribute="trailing" id="r5x-2Y-7PY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ppG-W4-VUB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Select scheme" id="tma-tl-EiT"/>
+                    <connections>
+                        <outlet property="teamAPickerView" destination="Jkc-D1-TMZ" id="3KK-Qp-MRe"/>
+                        <outlet property="teamBPickerView" destination="ZOl-Ki-a9h" id="BXS-5w-oGL"/>
+                        <segue destination="fmd-tw-F7E" kind="show" identifier="switchToField" id="4dG-V0-7Bb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UgA-zd-dig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2386" y="79"/>
+        </scene>
+    </scenes>
+</document>
